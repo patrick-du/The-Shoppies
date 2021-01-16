@@ -27,6 +27,38 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'SFProDisplay-Bold';
         src: url('${SFProDisplayBold}') format('woff2')
     }
+
+    body {
+        background: ${({ theme }) => theme.background};
+        color: ${({ theme }) => theme.primaryText};
+        font-family: SFProDisplay-Light;
+        transition: all 0.25s linear;
+    }
+
+    h1, h3, h4, p, input {
+        margin: 0px;
+        padding: 0px;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-family: SFProDisplay-Medium;
+        font-size: 38px;
+    }
+    
+    h3 {
+        font-family: SFProDisplay-Medium;
+        font-size: 24px;
+    }
+    
+    h4 {
+        font-family: SFProDisplay-Regular;
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 19px;
+    }
 `;
 
 export default GlobalStyles;
