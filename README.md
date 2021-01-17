@@ -2,6 +2,7 @@
 
 # The Shoppies
 - Shopify's Front-End Developer Intern Summer 2021 Challenge
+- [Deployed App](https://shoppies-pdu.netlify.app/)
 - [Link to challenge](https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit#)
 
 ---
