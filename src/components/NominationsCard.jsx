@@ -2,7 +2,11 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { GlobalContext } from '../store/Store';
-import { StyledCard, StyledRemoveButton } from '../styles/components';
+import {
+  StyledCard,
+  StyledTopRow,
+  StyledRemoveButton,
+} from '../styles/components';
 
 const NominationsCard = (props) => {
   const { Title, Year, imdbID } = props;
@@ -14,10 +18,12 @@ const NominationsCard = (props) => {
 
   return (
     <StyledCard>
-      <p>{`${Title} (${Year})`}</p>
-      <StyledRemoveButton type="button" onClick={handleButtonClick}>
-        x
-      </StyledRemoveButton>
+      <StyledTopRow>
+        <p>{`${Title} (${Year})`}</p>
+        <StyledRemoveButton type="button" onClick={handleButtonClick}>
+          x
+        </StyledRemoveButton>
+      </StyledTopRow>
     </StyledCard>
   );
 };

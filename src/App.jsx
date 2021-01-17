@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable eqeqeq */
 import React, { useState } from 'react';
 import StyledComponents, { ThemeProvider } from 'styled-components';
@@ -28,7 +29,6 @@ const StyledCol = StyledComponents.div`
 
 const App = () => {
   const [theme, setTheme] = useState(lightTheme);
-
   const toggleTheme = () => {
     setTheme(theme == lightTheme ? darkTheme : lightTheme);
   };
@@ -48,6 +48,8 @@ const App = () => {
               )}
             </StyledThemeButton>
           </StyledRow>
+          <Container title="Movie Title" component={<SearchBar />} />
+          <Alerts />
           <StyledRow>
             <StyledCol>
               <Container title="Search Results" component={<MoviesList />} />
@@ -55,7 +57,6 @@ const App = () => {
             <div style={{ width: '30px' }} />
             <StyledCol>
               <Container title="Nominations" component={<NominationsList />} />
-              <Alerts />
             </StyledCol>
           </StyledRow>
         </StyledContainer>

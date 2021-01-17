@@ -2,7 +2,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { GlobalContext } from '../store/Store';
-import { StyledCard, StyledAddButton } from '../styles/components';
+import {
+  StyledCard,
+  StyledTopRow,
+  StyledAddButton,
+  StyledInfoRow,
+} from '../styles/components';
 import { MAX_NOMINATIONS } from '../constants';
 
 const MoviesCard = (props) => {
@@ -17,7 +22,7 @@ const MoviesCard = (props) => {
       isDisabled || nominations.length === MAX_NOMINATIONS ? 'none' : 'auto',
   };
 
-  const handleButtonClick = () => {
+  const handleButton = () => {
     dispatch({ type: 'ADD_NOMINATION', payload: props });
     setIsDisabled(true);
   };
@@ -29,16 +34,17 @@ const MoviesCard = (props) => {
   }, [movies, nominations]);
 
   return (
-    <StyledCard style={conditionalDisable}>
-      {isDisabled ? <strike>{cardHeader}</strike> : <p>{cardHeader}</p>}
-      <StyledAddButton
-        type="button"
-        onClick={handleButtonClick}
-        style={conditionalDisable}
-      >
-        +
-      </StyledAddButton>
-    </StyledCard>
+    <>
+      <StyledCard style={conditionalDisable}>
+        <StyledTopRow>
+          {isDisabled ? <strike>{cardHeader}</strike> : <p>{cardHeader}</p>}
+          <StyledAddButton type="button" onClick={handleButton}>
+            +
+          </StyledAddButton>
+        </StyledTopRow>
+        <StyledInfoRow>Click here for more information</StyledInfoRow>
+      </StyledCard>
+    </>
   );
 };
 

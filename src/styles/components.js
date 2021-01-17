@@ -12,15 +12,14 @@ export const StyledContainer = StyledComponents.div`
 
 export const StyledCard = StyledComponents.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
-  padding: 15px;
   border-radius: 10px;
   border: 3px solid ${({ theme }) => theme.foreground2};
   color: ${({ theme }) => theme.secondaryText}
   background-color: ${lightTheme.background};
   transition: all 0.25s linear;
-  justify-content: space-between;
   -webkit-box-sizing: border-box; 
 
   &:hover {
@@ -28,8 +27,21 @@ export const StyledCard = StyledComponents.div`
   }
 `;
 
+export const StyledTopRow = StyledComponents.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+`;
+
+export const StyledInfoRow = StyledComponents.div`
+  width: 100%;
+  background-color: ${({ theme }) => theme.foreground2};
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+`;
+
 export const StyledButton = StyledComponents.button`
-  border-radius: 15px;
+  border-radius: 10px;
   border: 0px;
   height: 30px;
   width: 30px;

@@ -37,7 +37,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     if (query === '') {
-      dispatch({ type: 'SET_ERROR', payload: '' });
+      dispatch({ type: 'SET_ERROR', payload: 'Try searching 🔎 for a movie!' });
     } else {
       searchMovie(query).then((movies) => {
         if (movies && movies.Response === 'True') {

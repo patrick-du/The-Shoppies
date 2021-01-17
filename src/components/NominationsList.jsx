@@ -22,7 +22,7 @@ const NominationsList = () => {
   }, [nominations]);
 
   const renderNominations = nominations.map((nomination) => (
-    <NominationsCard {...nomination} />
+    <NominationsCard key={nomination.imdbID} {...nomination} />
   ));
 
   return (

@@ -23,7 +23,7 @@ const Container = ({ title, component }) => (
 
 Container.propTypes = {
   title: PropTypes.string.isRequired,
-  component: PropTypes.elementType.isRequired,
+  component: PropTypes.node.isRequired,
 };
 
 export default Container;
