@@ -34,14 +34,13 @@ export const StyledTopRow = StyledComponents.div`
 `;
 
 export const StyledInfoRow = StyledComponents.div`
-  width: 100%;
+  padding: 15px;
   background-color: ${({ theme }) => theme.foreground2};
   border-radius: 0px 0px 10px 10px;
-  text-align: center;
 `;
 
 export const StyledButton = StyledComponents.button`
-  border-radius: 10px;
+  border-radius: 20px;
   border: 0px;
   height: 30px;
   width: 30px;

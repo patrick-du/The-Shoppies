@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import StyledComponents from 'styled-components';
 import { GlobalContext } from '../store/Store';
-import searchMovie from '../services/movies';
+import { searchMovie } from '../services/movies';
 import { lightTheme } from '../styles/theme';
 
 const StyledInput = StyledComponents.input`
@@ -19,11 +19,11 @@ const StyledInput = StyledComponents.input`
   -webkit-box-sizing: border-box;
 
   &:hover {
-    border: 2px solid ${lightTheme.foregroundShadow};
+    border: 2px solid ${({ theme }) => theme.foregroundShadow};
   } 
   &:focus {
     outline: none;
-    border: 2px solid ${lightTheme.foregroundShadow};
+    border: 2px solid ${({ theme }) => theme.foregroundShadow};
   }
 `;
 
@@ -60,6 +60,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-
-// debounce values
-// after debouncing values - show the error with the emoji ⚠️

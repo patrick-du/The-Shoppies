@@ -6,9 +6,9 @@ import {
   StyledCard,
   StyledTopRow,
   StyledAddButton,
-  StyledInfoRow,
 } from '../styles/components';
 import { MAX_NOMINATIONS } from '../constants';
+import MovieInfoRow from './MovieInfoRow';
 
 const MoviesCard = (props) => {
   const { Title, Year, imdbID } = props;
@@ -39,10 +39,10 @@ const MoviesCard = (props) => {
         <StyledTopRow>
           {isDisabled ? <strike>{cardHeader}</strike> : <p>{cardHeader}</p>}
           <StyledAddButton type="button" onClick={handleButton}>
-            +
+            <p>+</p>
           </StyledAddButton>
         </StyledTopRow>
-        <StyledInfoRow>Click here for more information</StyledInfoRow>
+        <MovieInfoRow id={imdbID} />
       </StyledCard>
     </>
   );

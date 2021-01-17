@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { GlobalContext } from '../store/Store';
+import MovieInfoRow from './MovieInfoRow';
 import {
   StyledCard,
   StyledTopRow,
@@ -24,6 +25,7 @@ const NominationsCard = (props) => {
           x
         </StyledRemoveButton>
       </StyledTopRow>
+      <MovieInfoRow id={imdbID} />
     </StyledCard>
   );
 };
