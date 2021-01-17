@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledComponents from 'styled-components';
 
-
 const StyledInfoField = StyledComponents.div`
     margin-top: 15px;
 `;
