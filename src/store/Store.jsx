@@ -18,9 +18,9 @@ const Store = ({ children }) => {
   );
 };
 
-export const GlobalContext = createContext(initialState);
-export default Store;
-
 Store.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export const GlobalContext = createContext(initialState);
+export default Store;

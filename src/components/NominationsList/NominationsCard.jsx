@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { GlobalContext } from '../store/Store';
-import MovieInfoRow from './MovieInfoRow';
+import { GlobalContext } from '../../store/Store';
+import MovieInfoRow from '../Reusables/MovieInfoRow';
 import {
   StyledCard,
   StyledTopRow,
   StyledRemoveButton,
-} from '../styles/components';
+} from '../../styles/components';
 
 const NominationsCard = (props) => {
   const { Title, Year, imdbID } = props;

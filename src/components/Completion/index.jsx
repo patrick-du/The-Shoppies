@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../store/Store';
-import { StyledContainer } from '../styles/components';
-import { MAX_NOMINATIONS } from '../constants';
+import { GlobalContext } from '../../store/Store';
+import { StyledContainer } from '../../styles/components';
+import { MAX_NOMINATIONS } from '../../constants';
 
-const Alerts = () => {
+const Competion = () => {
   const [state] = useContext(GlobalContext);
   const { nominations } = state;
 
@@ -17,4 +17,4 @@ const Alerts = () => {
   ) : null;
 };
 
-export default Alerts;
+export default Competion;

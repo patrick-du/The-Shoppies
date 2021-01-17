@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { GlobalContext } from '../store/Store';
+import { GlobalContext } from '../../store/Store';
 import NominationsCard from './NominationsCard';
 
 const NominationsList = () => {
@@ -25,16 +25,10 @@ const NominationsList = () => {
     <NominationsCard key={nomination.imdbID} {...nomination} />
   ));
 
-  return (
-    <>
-      {nominations.length === 0 ? (
-        <p>
-          You have no nominations - search for a 🎞️ and add it to your list.
-        </p>
-      ) : null}
-
-      {renderNominations}
-    </>
+  return nominations.length === 0 ? (
+    <p>You have no nominations - search for a 🎞️ and add it to your list.</p>
+  ) : (
+    renderNominations
   );
 };
 

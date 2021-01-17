@@ -1,14 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { GlobalContext } from '../store/Store';
+import { GlobalContext } from '../../store/Store';
 import {
   StyledCard,
   StyledTopRow,
   StyledAddButton,
-} from '../styles/components';
-import { MAX_NOMINATIONS } from '../constants';
-import MovieInfoRow from './MovieInfoRow';
+} from '../../styles/components';
+import { MAX_NOMINATIONS } from '../../constants';
+import MovieInfoRow from '../Reusables/MovieInfoRow';
 
 const MoviesCard = (props) => {
   const { Title, Year, imdbID } = props;
@@ -35,8 +34,8 @@ const MoviesCard = (props) => {
 
   return (
     <>
-      <StyledCard style={conditionalDisable}>
-        <StyledTopRow>
+      <StyledCard>
+        <StyledTopRow style={conditionalDisable}>
           {isDisabled ? <strike>{cardHeader}</strike> : <p>{cardHeader}</p>}
           <StyledAddButton type="button" onClick={handleButton}>
             <p>+</p>

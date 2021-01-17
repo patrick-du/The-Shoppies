@@ -6,7 +6,6 @@ export const searchMovie = async (query) => {
   const endpoint = `${omdbRoot}&type=movie&s=${query}`;
   const response = await fetch(endpoint);
   const movies = await response.json();
-
   return movies;
 };
 

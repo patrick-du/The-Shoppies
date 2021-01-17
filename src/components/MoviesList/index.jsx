@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../store/Store';
+import { GlobalContext } from '../../store/Store';
 import MoviesCard from './MoviesCard';
 
 const MoviesList = () => {

@@ -1,14 +1,15 @@
 import React from 'react';
-import StyledComponents from 'styled-components';
 import PropTypes from 'prop-types';
+import StyledComponents from 'styled-components';
+
 
 const StyledInfoField = StyledComponents.div`
-        margin-top: 15px;
-    `;
+    margin-top: 15px;
+`;
 
 const InfoHeader = StyledComponents.p`
-        font-family: SFProDisplay-Medium;
-    `;
+    font-family: SFProDisplay-Medium;
+`;
 
 const MovieInfoField = ({ header, text }) => (
   <StyledInfoField>

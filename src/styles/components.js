@@ -1,6 +1,4 @@
-/* eslint-disable import/prefer-default-export */
 import StyledComponents from 'styled-components';
-import { lightTheme } from './theme';
 
 export const StyledContainer = StyledComponents.div`
   background-color: ${({ theme }) => theme.foreground};
@@ -16,9 +14,8 @@ export const StyledCard = StyledComponents.div`
   width: 100%;
   margin-bottom: 20px;
   border-radius: 10px;
-  border: 3px solid ${({ theme }) => theme.foreground2};
-  color: ${({ theme }) => theme.secondaryText}
-  background-color: ${lightTheme.background};
+  border: 3px solid ${({ theme }) => theme.foreground};
+  background-color: ${({ theme }) => theme.background};
   transition: all 0.25s linear;
   -webkit-box-sizing: border-box; 
 
@@ -35,7 +32,7 @@ export const StyledTopRow = StyledComponents.div`
 
 export const StyledInfoRow = StyledComponents.div`
   padding: 15px;
-  background-color: ${({ theme }) => theme.foreground2};
+  background-color: ${({ theme }) => theme.foreground};
   border-radius: 0px 0px 10px 10px;
 `;
 
@@ -46,31 +43,32 @@ export const StyledButton = StyledComponents.button`
   width: 30px;
   font-size: 22px;
   transition: all 0.25s linear;
+  align-self: center;
   color: ${({ theme }) => theme.primaryText};
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.foreground};
+  &:hover {
+    color: ${({ theme }) => theme.foreground};
+  }
   &:focus {
     outline: none;
   }
 `;
 
 export const StyledThemeButton = StyledComponents(StyledButton)`
-  align-self: center;
+  background-color: ${({ theme }) => theme.background};
   &:hover {
     color: ${({ theme }) => theme.themeToggle};
-    background-color: ${({ theme }) => theme.background};
   }
 `;
 
 export const StyledAddButton = StyledComponents(StyledButton)`
   &:hover {
-    color: ${({ theme }) => theme.foreground};
     background-color: ${({ theme }) => theme.movieHover};
   }
 `;
 
 export const StyledRemoveButton = StyledComponents(StyledButton)`
   &:hover {
-    color: ${({ theme }) => theme.foreground};
     background-color: ${({ theme }) => theme.nominationHover};
   }
 `;

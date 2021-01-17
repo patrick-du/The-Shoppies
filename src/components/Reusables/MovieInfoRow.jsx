@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React, { useState, useEffect } from 'react';
-import StyledComponents from 'styled-components';
 import PropTypes from 'prop-types';
+import StyledComponents from 'styled-components';
 import Collapse from '@kunukn/react-collapse';
 import MovieInfoField from './MovieInfoField';
-import { StyledInfoRow } from '../styles/components';
-import { searchMovieById } from '../services/movies';
-import { IMDB_URL } from '../constants';
+import { StyledInfoRow } from '../../styles/components';
+import { searchMovieById } from '../../services/movies';
+import { IMDB_URL } from '../../constants';
 
 const StyledImage = StyledComponents.img`
     margin-top: 15px;
@@ -76,16 +76,15 @@ const MovieInfoRow = ({ id }) => {
       searchMovieById(id).then((movie) => {
         setTimeout(() => {
           setMovieInfo(movie);
-        }, 300);
+        }, 200);
       });
     }
-
     setShowMovieInfo(!showMovieInfo);
   };
 
   return (
     <StyledInfoRow onClick={toggleMovieInfo}>
-      <p>{showMovieInfo ? `Collapse ↑` : `See more information ↓`}</p>
+      <p>{showMovieInfo ? `Collapse ↑` : `Expand ↓`}</p>
       <Collapse
         isOpen={showMovieInfo}
         transition="height 250ms cubic-bezier(0.4, 0, 0.2, 1)"

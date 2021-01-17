@@ -1,16 +1,15 @@
-/* eslint-disable react/jsx-wrap-multilines */
-/* eslint-disable eqeqeq */
 import React, { useState } from 'react';
 import StyledComponents, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
+import { StyledThemeButton } from './styles/components';
 import GlobalStyles from './styles/global';
+import Container from './components/Reusables/Container';
 import SearchBar from './components/SearchBar';
 import MoviesList from './components/MoviesList';
-import Alerts from './components/Alerts';
-import Store from './store/Store';
 import NominationsList from './components/NominationsList';
-import Container from './components/Container';
-import { StyledThemeButton } from './styles/components';
+import Completion from './components/Completion';
+import Store from './store/Store';
+import InfoCard from './components/InfoCard';
 
 const StyledContainer = StyledComponents.div`
   width: 80%;
@@ -30,7 +29,7 @@ const StyledCol = StyledComponents.div`
 const App = () => {
   const [theme, setTheme] = useState(lightTheme);
   const toggleTheme = () => {
-    setTheme(theme == lightTheme ? darkTheme : lightTheme);
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
   };
 
   return (
@@ -48,8 +47,12 @@ const App = () => {
               )}
             </StyledThemeButton>
           </StyledRow>
+          <Container
+            title="Welcome to the movie awards for entrepreneurs!"
+            component={<InfoCard />}
+          />
           <Container title="Movie Title" component={<SearchBar />} />
-          <Alerts />
+          <Completion />
           <StyledRow>
             <StyledCol>
               <Container title="Search Results" component={<MoviesList />} />
