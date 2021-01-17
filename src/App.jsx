@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import StyledComponents, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
 import GlobalStyles from './styles/global';
-import SearchBox from './components/SearchBox';
+import SearchBar from './components/SearchBar';
+import MoviesList from './components/MoviesList';
+import Alerts from './components/Alerts';
 import Store from './store/Store';
-import NominationsBox from './components/NominationsBox';
+import NominationsList from './components/NominationsList';
+import Container from './components/Container';
+import { StyledThemeButton } from './styles/components';
 
 const StyledContainer = StyledComponents.div`
   width: 80%;
@@ -15,6 +19,11 @@ const StyledContainer = StyledComponents.div`
 const StyledRow = StyledComponents.div`
   display: flex;
   justify-content: space-between
+`;
+
+const StyledCol = StyledComponents.div`
+  flex: 1;
+  flex-direction: column;
 `;
 
 const App = () => {
@@ -31,12 +40,24 @@ const App = () => {
         <StyledContainer>
           <StyledRow>
             <h1>The Shoppies</h1>
-            <button type="button" onClick={toggleTheme}>
-              Toggle theme
-            </button>
+            <StyledThemeButton type="button" onClick={toggleTheme}>
+              {theme === lightTheme ? (
+                <i className="far fa-moon" />
+              ) : (
+                <i className="far fa-sun" />
+              )}
+            </StyledThemeButton>
           </StyledRow>
-          <NominationsBox />
-          <SearchBox />
+          <StyledRow>
+            <StyledCol>
+              <Container title="Search Results" component={<MoviesList />} />
+            </StyledCol>
+            <div style={{ width: '30px' }} />
+            <StyledCol>
+              <Container title="Nominations" component={<NominationsList />} />
+              <Alerts />
+            </StyledCol>
+          </StyledRow>
         </StyledContainer>
       </Store>
     </ThemeProvider>

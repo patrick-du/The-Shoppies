@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Reducer from './Reducer';
 
 const initialState = {
+  theme: 'light',
   nominations: [],
   movies: [],
   error: null,

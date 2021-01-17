@@ -35,7 +35,20 @@ const GlobalStyles = createGlobalStyle`
         transition: all 0.25s linear;
     }
 
-    h1, h3, h4, p, input {
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
+    
+    body::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    body::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+    }
+
+    h1, h3, h4, p, input, strike {
         margin: 0px;
         padding: 0px;
         font-weight: normal;
@@ -56,7 +69,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 22px;
     }
 
-    p {
+    p, strike {
         font-size: 19px;
     }
 `;

@@ -8,8 +8,7 @@ import { lightTheme } from '../styles/theme';
 
 const StyledInput = StyledComponents.input`
   width: 100%;
-  margin: 25px 0px;
-  padding: 20px;
+  padding: 15px;
   height: 50px;
   border-radius: 10px;
   font-size: 19px;
@@ -37,29 +36,26 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    searchMovie(query)
-      .then((movies) => {
+    if (query === '') {
+      dispatch({ type: 'SET_ERROR', payload: '' });
+    } else {
+      searchMovie(query).then((movies) => {
         if (movies && movies.Response === 'True') {
           dispatch({ type: 'SET_MOVIES', payload: movies.Search });
         } else {
           dispatch({ type: 'SET_ERROR', payload: movies.Error });
         }
-      })
-      .catch((e) => {
-        // Error handle better
-        alert(e);
       });
+    }
   }, [query]);
 
   return (
-    <div>
-      <StyledInput
-        type="text"
-        placeholder="Search..."
-        value={query}
-        onChange={(e) => handleChange(e)}
-      />
-    </div>
+    <StyledInput
+      type="text"
+      placeholder="Type to search..."
+      value={query}
+      onChange={(e) => handleChange(e)}
+    />
   );
 };
 

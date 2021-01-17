@@ -1,17 +1,14 @@
-/* eslint-disable arrow-body-style */
 import React, { useContext } from 'react';
 import { GlobalContext } from '../store/Store';
-import Card from './Card';
+import MoviesCard from './MoviesCard';
 
-const SearchResults = () => {
+const MoviesList = () => {
   const [state] = useContext(GlobalContext);
   const { movies, error } = state;
 
-  const renderMovies = movies.map((movie) => {
-    return <Card {...movie} />;
-  });
+  const renderMovies = movies.map((movie) => <MoviesCard {...movie} />);
 
   return movies.length > 0 ? renderMovies : <p>{error}</p>;
 };
 
-export default SearchResults;
+export default MoviesList;
